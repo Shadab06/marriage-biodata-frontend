@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
-import UserDetails from "./userDetils/index"
+import UserDetails from './pages/Home';
 
 function App() {
 
@@ -9,9 +9,7 @@ function App() {
     <div className='App'>
       <Router>
         <Switch>
-          <Route path="/user/:id" exact>
-            <UserDetails />
-          </Route>
+          <Route path="/user/:id" exact component={UserDetails} />
         </Switch>
       </Router>
     </div>

@@ -1,23 +1,23 @@
-import { CardMedia } from "@material-ui/core";
-import "./styles.css";
+import React from 'react'
+import { CardMedia } from "@material-ui/core"
 
-const Section1 = ({ user }) => {
-  return (
-    <div className="section_conainer">
-      {user?.profileImageWeb && (
-        <CardMedia
-          component="img"
-          image={user?.profileImageWeb}
-          title="Paella dish"
-        />
-      )}
-      <div className="section_description">
-        <h2>01</h2>
-        <div className="section_description_main">
-          <h1>{user?.name}</h1>
-          <h2>Personal Details</h2>
-          <div className="section_details">
-            {user?.religion && (
+import image from "../image/image.jpg";
+import "./styles.css"
+const section1 = ({ user }) => {
+    console.log(user)
+    return (
+        <div className="section1-container">
+            <CardMedia
+                className="logo-image"
+                component="img"
+                image={image}
+                title="Paella dish"
+            />
+            <div className="personal-details">
+                {user?.name &&
+                    <h1>{user.name}</h1>}
+                <div className="all-personal-details">
+                {user?.religion && (
               <>
                 <p>Religion</p> <p>{user?.religion}</p>
               </>
@@ -62,11 +62,10 @@ const Section1 = ({ user }) => {
                 <p>Email</p> <p>{user?.email}</p>
               </>
             )}
-          </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
-};
+    )
+}
 
-export default Section1;
+export default section1
