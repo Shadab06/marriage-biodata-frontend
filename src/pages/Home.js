@@ -6,6 +6,7 @@ import axios from "axios";
 import Section1 from './section1'
 import Section2 from './section2'
 import Section3 from './section3'
+import Section4 from './section4'
 
 const Home = () => {
 
@@ -29,6 +30,7 @@ const Home = () => {
             <Section1 user={user} />
             <Section2 user={user} />
             <Section3 user={user} />
+            <Section4 user={user} />
         </div>
     )
 }
