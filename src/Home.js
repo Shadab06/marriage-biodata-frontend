@@ -19,8 +19,6 @@ const Home = () => {
         `http://142.93.218.129:2001/api/user/get/${id}`
       );
       setUser(data);
-
-      console.log("data", data);
     };
     fetchUser();
   }, []);
