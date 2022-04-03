@@ -1,15 +1,15 @@
-import './App.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import UserDetails from './pages/Home';
+import Home from "./Home";
 
 function App() {
-
   return (
-    <div className='App'>
+    <div className="App">
       <Router>
         <Switch>
-          <Route path="/user/:id" exact component={UserDetails} />
+        <Route path="/" exact component={Main} />
+          <Route path="/user/:id" exact component={Home} />
         </Switch>
       </Router>
     </div>
@@ -17,3 +17,9 @@ function App() {
 }
 
 export default App;
+
+const Main = () => {
+  return (
+    <h1 style={{ textAlign: "center", marginTop: "100px" }}>Welcome to Marriage Biodata</h1>
+  )
+}
