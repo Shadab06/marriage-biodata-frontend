@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.5a746612.chunk.css",
-    "main.js": "/static/js/main.7d807866.chunk.js",
-    "main.js.map": "/static/js/main.7d807866.chunk.js.map",
+    "main.css": "/static/css/main.9556724e.chunk.css",
+    "main.js": "/static/js/main.e49a029b.chunk.js",
+    "main.js.map": "/static/js/main.e49a029b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.df681310.js",
     "runtime-main.js.map": "/static/js/runtime-main.df681310.js.map",
-    "static/js/2.ae7fbaec.chunk.js": "/static/js/2.ae7fbaec.chunk.js",
-    "static/js/2.ae7fbaec.chunk.js.map": "/static/js/2.ae7fbaec.chunk.js.map",
+    "static/js/2.15c506f6.chunk.js": "/static/js/2.15c506f6.chunk.js",
+    "static/js/2.15c506f6.chunk.js.map": "/static/js/2.15c506f6.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.5a746612.chunk.css.map": "/static/css/main.5a746612.chunk.css.map",
-    "static/js/2.ae7fbaec.chunk.js.LICENSE.txt": "/static/js/2.ae7fbaec.chunk.js.LICENSE.txt",
-    "static/media/image.ee4bb188.jpg": "/static/media/image.ee4bb188.jpg"
+    "static/css/main.9556724e.chunk.css.map": "/static/css/main.9556724e.chunk.css.map",
+    "static/js/2.15c506f6.chunk.js.LICENSE.txt": "/static/js/2.15c506f6.chunk.js.LICENSE.txt",
+    "static/media/bride-holds-beautiful-bridal-bouquet-close-up_8353-10474-16.74da2616.jpg": "/static/media/bride-holds-beautiful-bridal-bouquet-close-up_8353-10474-16.74da2616.jpg",
+    "static/media/image.7417dd06.jpg": "/static/media/image.7417dd06.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.df681310.js",
-    "static/js/2.ae7fbaec.chunk.js",
-    "static/css/main.5a746612.chunk.css",
-    "static/js/main.7d807866.chunk.js"
+    "static/js/2.15c506f6.chunk.js",
+    "static/css/main.9556724e.chunk.css",
+    "static/js/main.e49a029b.chunk.js"
   ]
 }
