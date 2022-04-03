@@ -16,13 +16,14 @@ const Home = () => {
   useEffect(() => {
     const fetchUser = async () => {
       const { data } = await axios.get(
-        // `http://142.93.218.129:2001/api/user/get/${id}`
-        `http://localhost:2001/api/user/get/${id}`
+        `http://142.93.218.129:2001/api/user/get/${id}`
       );
       setUser(data);
+
+      console.log("data", data);
     };
     fetchUser();
-  }, [id]);
+  }, []);
 
   return (
     <div className="main-container">
