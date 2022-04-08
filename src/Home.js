@@ -15,10 +15,15 @@ const Home = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const { data } = await axios.get(
-        `http://142.93.218.129:2001/api/user/get/${id}`
-      );
-      setUser(data);
+      try {
+        const { data } = await axios.get(
+          // `http://142.93.218.129:2001/api/user/get/${id}`
+          `http://localhost:2001/api/user/get/${id}`
+        );
+        setUser(data);
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetchUser();
   }, []);
@@ -30,10 +35,10 @@ const Home = () => {
       </div>
       <div className="container-1-detail">
         <div className="container-1-details">
-        {user?.name && <h1>{user.name}</h1>}
-        {user?.mobile && <h3>97478976922</h3>}
-        {user?.email && <h5>{user.email}</h5>}
-        <hr className="hr-line" />
+          {user?.name && <h1>{user.name}</h1>}
+          {user?.mobile && <h3>97478976922</h3>}
+          {user?.email && <h5>{user.email}</h5>}
+          <hr className="hr-line" />
           <div className="full-details" style={{ marginTop: "10px" }}>
             {user?.religion && (
               <>
@@ -125,7 +130,7 @@ const Home = () => {
             <div className="full-details">
               {user?.kuldevak && (
                 <>
-                  <p>Kuldevak/Gotra</p> <p>Islam</p>
+                  <p>Kuldevak/Gotra</p> <p>{user.kuldevak}</p>
                 </>
               )}
             </div>
@@ -141,56 +146,28 @@ const Home = () => {
               />
             )}
           </div>
-          <div className="section-2-family-details">
-            <h1>Family Details</h1>
+          <div className="section-2-education-details">
+            <h1>Education Details</h1>
             <hr className="hr-line3" />
-            <div className="section-2-family-all-details">
+            <div className="section-2-education-all-details">
               <div className="full-details" style={{ marginTop: "10px" }}>
-                {user?.fatherName && (
+                {user?.education && (
                   <>
-                    <p>Father Name</p> <p>{user?.fatherName}</p>
+                    <p>Education</p> <p>{user?.education}</p>
                   </>
                 )}
               </div>
               <div className="full-details">
-                {user?.fatherOccupation && (
+                {user?.occupation && (
                   <>
-                    <p>Father Occupation</p> <p>{user?.fatherOccupation}</p>
+                    <p>Occupation</p> <p>{user?.occupation}</p>
                   </>
                 )}
               </div>
               <div className="full-details">
-                {user?.motherName && (
+                {user?.income && (
                   <>
-                    <p>Mother Name</p> <p>{user?.motherName}</p>
-                  </>
-                )}
-              </div>
-              <div className="full-details">
-                {user?.motherOccupation && (
-                  <>
-                    <p>Mother Occupation</p> <p>{user?.motherOccupation}</p>
-                  </>
-                )}
-              </div>
-              <div className="full-details">
-                {user?.siblings && (
-                  <>
-                    <p>Siblings</p> <p>{user?.siblings}</p>
-                  </>
-                )}
-              </div>
-              <div className="full-details">
-                {user?.brother && (
-                  <>
-                    <p>Brother(s)</p> <p>{user?.brother}</p>
-                  </>
-                )}
-              </div>
-              <div className="full-details">
-                {user?.sister && (
-                  <>
-                    <p>Sister(s)</p> <p>{user?.sister}</p>
+                    <p>Income</p> <p>{user?.income}</p>
                   </>
                 )}
               </div>
@@ -200,31 +177,81 @@ const Home = () => {
       </div>
       <div className="section-3-expectations">
         <div className="section-3-image">
-          <h1>Live life happily</h1>
+          <h1>Family details</h1>
           <hr className="hr-line4" />
-          <img src={image} alt="marriage biodata" />
+          <div className="full-details" style={{ marginTop: "10px" }}>
+            {user?.fatherName && (
+              <>
+                <p>Father Name</p> <p>{user?.fatherName}</p>
+              </>
+            )}
+          </div>
+          <div className="full-details">
+            {user?.fatherOccupation && (
+              <>
+                <p>Father Occupation</p> <p>{user?.fatherOccupation}</p>
+              </>
+            )}
+          </div>
+          <div className="full-details">
+            {user?.motherName && (
+              <>
+                <p>Mother Name</p> <p>{user?.motherName}</p>
+              </>
+            )}
+          </div>
+          <div className="full-details">
+            {user?.motherOccupation && (
+              <>
+                <p>Mother Occupation</p> <p>{user?.motherOccupation}</p>
+              </>
+            )}
+          </div>
+          <div className="full-details">
+            {user?.siblings && (
+              <>
+                <p>Siblings</p> <p>{user?.siblings}</p>
+              </>
+            )}
+          </div>
+          <div className="full-details">
+            {user?.brother && (
+              <>
+                <p>Brother(s)</p> <p>{user?.brother}</p>
+              </>
+            )}
+          </div>
+          <div className="full-details">
+            {user?.sister && (
+              <>
+                <p>Sister(s)</p> <p>{user?.sister}</p>
+              </>
+            )}
+          </div>
         </div>
         <div className="section-3-hobbies">
-          <h3>Hobbies</h3>
-          <div className="horizontal-bar"></div>
           {user?.hobbies && (
-            <div className="hobbies-all-details">{user.hobbies}</div>
+            <>
+              <h3>Hobbies</h3>
+              <div className="horizontal-bar"></div>
+              <div className="hobbies-all-details">{user.hobbies}</div>
+            </>
           )}
           <div className="section-3-expection">
-            <h3 style={{ marginTop: "40px", marginLeft: "40px" }}>
-              Expectations
-            </h3>
-            <div
-              className="horizontal-bar"
-              style={{ marginLeft: "40px" }}
-            ></div>
-            <div className="expectations-all-details">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
-              impedit ea illum! A, neque? Officiis ipsa necessitatibus, eligendi
-              blanditiis ullam nesciunt nihil reprehenderit ipsum eaque
-              voluptatibus sapiente maxime totam, alias repellendus, nobis atque
-              non? Mollitia corrupti dolore veritatis provident
-            </div>
+            {user?.expectations && (
+              <>
+                <h3 style={{ marginTop: "10px", marginLeft: "40px" }}>
+                  Expectations
+                </h3>
+                <div
+                  className="horizontal-bar"
+                  style={{ marginLeft: "40px" }}
+                ></div>
+                <div className="expectations-all-details">
+                  {user.expectations}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -242,10 +269,6 @@ const Home = () => {
       <div className="section-5-contacts">
         <h1>Address & Location</h1>
         <hr className="hr-line4" style={{ width: "250px" }} />
-        <p>
-          The residential address of {user?.name} is given below where the other
-          family memberscan also reside.
-        </p>
         <div className="user-cotact-details">
           {user?.address && (
             <>
