@@ -17,8 +17,8 @@ const Home = () => {
     const fetchUser = async () => {
       try {
         const { data } = await axios.get(
-          // `http://142.93.218.129:2001/api/user/get/${id}`
-          `http://localhost:2001/api/user/get/${id}`
+          `http://142.93.218.129:2001/api/user/get/${id}`
+          // `http://localhost:2001/api/user/get/${id}`
         );
         console.log(data);
         setUser(data);
