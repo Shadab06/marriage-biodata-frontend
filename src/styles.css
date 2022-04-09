@@ -7,7 +7,7 @@
   .hr-line {
     position: absolute;
     width: 50%;
-    right: 40px;
+    right: -5px;
     background-color: #d4b6be;
     height: 3px;
     border-radius: 10px;
@@ -26,15 +26,13 @@
 
   .container-1-detail {
     position: relative;
-    margin-top: 50px;
-    height: 250px;
+    margin-top: 20px;
   }
 
   .container-1-details {
-    position: absolute;
-    width: 250px;
-    right: 50px;
-    padding-right: 50px;
+    position: relative;
+    margin-left: 180px;
+    max-width: 250px;
     text-align: end;
   }
 
@@ -54,6 +52,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 2px;
+    z-index: 10;
   }
 
   /* section 2 */
@@ -127,7 +126,7 @@
 
   .horoscope-all-details {
     position: relative;
-    width: 300px;
+    max-width: 250px;
     margin-bottom: 50px;
     margin-left: 40px;
   }
@@ -173,13 +172,13 @@
   .section-2-education-all-details {
     margin-left: auto;
     margin-right: 10px;
-    width: 300px;
+    max-width: 250px;
     margin-top: 10px;
     text-align: center;
     margin-bottom: 50px;
   }
 
-  .section-3-expectations {
+  .section-3-family-section {
     position: relative;
     background: linear-gradient(90deg, #d4b6be71 60%, #ffffff 40%);
     margin-top: 40px;
@@ -200,7 +199,6 @@
   .section-3-image {
     position: relative;
     padding-top: 20px;
-    height: 200px;
     width: 300px;
     margin-left: 80px;
     overflow: hidden;
@@ -219,11 +217,10 @@
 
   .horizontal-bar {
     position: relative;
-    height: 100px;
+    height: 40px;
     width: 3px;
     background-color: #d4b6be;
     float: left;
-    margin-top: 10px;
   }
 
   .hobbies-all-details {
@@ -287,10 +284,11 @@
 }
 
 @media screen and (max-width: 480px) {
-  /* section 2 */
-  .section-2-image {
+  .container-1-details {
     position: relative;
-    height: 500px;
+    margin-left: 100px;
+    max-width: 250px;
+    text-align: end;
   }
 
   .image-bg-colour {
@@ -344,18 +342,6 @@
 }
 
 @media screen and (max-width: 450px) {
-  .hr-line {
-    right: 50px;
-  }
-
-  .container-1-details {
-    position: absolute;
-    width: 200px;
-    right: 0;
-    padding-right: 50px;
-    text-align: end;
-  }
-
   .dot-image {
     position: absolute;
     max-width: 350px;
@@ -441,6 +427,7 @@
     position: relative;
     margin-bottom: 20px;
     height: 3px;
+    left: -30px;
     width: 150px;
     border-radius: 10px;
     background-color: #d4b6be;
@@ -461,7 +448,6 @@
 
   .horizontal-bar {
     float: left;
-    margin-top: 10px;
   }
 
   .section-4-image-galary {
