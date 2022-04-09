@@ -17,9 +17,10 @@ const Home = () => {
     const fetchUser = async () => {
       try {
         const { data } = await axios.get(
-          `http://142.93.218.129:2001/api/user/get/${id}`
-          // `http://localhost:2001/api/user/get/${id}`
+          // `http://142.93.218.129:2001/api/user/get/${id}`
+          `http://localhost:2001/api/user/get/${id}`
         );
+        console.log(data);
         setUser(data);
       } catch (error) {
         console.log(error);
@@ -71,6 +72,20 @@ const Home = () => {
             {user?.height && (
               <>
                 <p>Height</p> <p>{user?.height}</p>
+              </>
+            )}
+          </div>
+          <div className="full-details">
+            {user?.bloodGroup && (
+              <>
+                <p>Blood Group </p> <p>{user?.bloodGroup}</p>
+              </>
+            )}
+          </div>
+          <div className="full-details">
+            {user?.complexion && (
+              <>
+                <p>Complexion</p> <p>{user?.complexion}</p>
               </>
             )}
           </div>
@@ -175,7 +190,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="section-3-expectations">
+      <div className="section-3-family-section">
         <div className="section-3-image">
           <h1>Family details</h1>
           <hr className="hr-line4" />
@@ -217,7 +232,7 @@ const Home = () => {
           <div className="full-details">
             {user?.brother && (
               <>
-                <p>Brother(s)</p> <p>{user?.brother}</p>
+                <p>Brother(s)</p> <p>{user.brother}</p>
               </>
             )}
           </div>
@@ -240,7 +255,7 @@ const Home = () => {
           <div className="section-3-expection">
             {user?.expectations && (
               <>
-                <h3 style={{ marginTop: "10px", marginLeft: "40px" }}>
+                <h3 style={{ marginLeft: "40px" }}>
                   Expectations
                 </h3>
                 <div
@@ -255,17 +270,19 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="section-4-image-galary">
-        <h1>Photo Gallery</h1>
-        <hr
-          className="hr-line4"
-          style={{ marginLeft: "40px", width: "250px" }}
-        />
-        <div className="galary-section">
-          <img src={image} alt="marriage biodata" />
-          <img src={image} alt="marriage biodata" />
+      {user?.gallary && (
+        <div className="section-4-image-galary">
+          <h1>Photo Gallery</h1>
+          <hr
+            className="hr-line4"
+            style={{ marginLeft: "40px", width: "250px" }}
+          />
+          <div className="galary-section">
+            <img src={image} alt="marriage biodata" />
+            <img src={image} alt="marriage biodata" />
+          </div>
         </div>
-      </div>
+      )}
       <div className="section-5-contacts">
         <h1>Address & Location</h1>
         <hr className="hr-line4" style={{ width: "250px" }} />
