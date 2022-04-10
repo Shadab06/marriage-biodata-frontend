@@ -32,7 +32,15 @@ const Home = () => {
   return (
     <div className="main-container">
       <div className="container-1-image">
-        <img className="container-1-image" src={Logo} alt="marriage biodata" />
+        {user?.profileImageWeb && (
+          <CardMedia
+            className="container-1-image"
+            component="img"
+            height="140"
+            image={user.profileImageWeb}
+            alt="marriage biodata"
+          />
+        )}
       </div>
       <div className="container-1-detail">
         <div className="container-1-details">
@@ -105,12 +113,12 @@ const Home = () => {
           <img src={dots} alt="marriage biodata" />
         </div>
         <div className="user-image-section">
-          {user?.profileImageWeb && (
+          {user?.otherImages && (
             <CardMedia
-              className="user-image"
+              className="user-image-2"
               component="img"
               height="140"
-              image={user.profileImageWeb}
+              image={user.otherImagesWeb}
               alt="marriage biodata"
             />
           )}
@@ -151,7 +159,7 @@ const Home = () => {
             </div>
           </div>
           <div className="user-image-section-2">
-            {user?.otherImages && (
+            {user?.otherImage && (
               <CardMedia
                 className="user-image-2"
                 component="img"
@@ -248,16 +256,13 @@ const Home = () => {
           {user?.hobbies && (
             <>
               <h3>Hobbies</h3>
-              <div className="horizontal-bar"></div>
               <div className="hobbies-all-details">{user.hobbies}</div>
             </>
           )}
           <div className="section-3-expection">
             {user?.expectations && (
               <>
-                <h3 style={{ marginLeft: "40px" }}>
-                  Expectations
-                </h3>
+                <h3 style={{ marginLeft: "40px" }}>Expectations</h3>
                 <div
                   className="horizontal-bar"
                   style={{ marginLeft: "40px" }}
