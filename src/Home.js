@@ -11,14 +11,14 @@ import dots from "./images/dots.png";
 const Home = () => {
   const [user, setUser] = useState("");
 
-  let { id } = useParams();
+  let { manual_id } = useParams();
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const { data } = await axios.get(
-          `http://142.93.218.129:2001/api/user/get/${id}`
-          // `http://localhost:2001/api/user/get/${id}`
+          // `http://142.93.218.129:2001/api/user/get/${id}`
+          `http://142.93.218.129:2001/api/user/get/${manual_id}`
         );
         console.log(data);
         setUser(data);
