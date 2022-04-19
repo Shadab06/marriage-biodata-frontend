@@ -15,7 +15,7 @@
   }
 
   .container-1-about-me {
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 20px;
   }
 
@@ -62,7 +62,7 @@
     position: relative;
     max-width: 100%;
     text-align: center;
-  }
+  } 
 
   .container-1-name h1 {
     font-family: "Inconsolata", monospace;
@@ -71,16 +71,13 @@
 
   .container-1-details {
     position: relative;
-    margin-left: 180px;
-    max-width: 250px;
+    margin-top: 20px;
+      margin-left: 150px;
+    max-width: 300px;
   }
 
-  .container-1-details h3 {
+  .container-1-details h1 {
     margin-bottom: -12px;
-  }
-
-  .container-1-details h4 {
-    margin-bottom: -5px;
   }
 
   .full-details {
@@ -315,9 +312,7 @@
 
 @media screen and (max-width: 480px) {
   .container-1-details {
-    position: relative;
-    margin-left: 100px;
-    max-width: 250px;
+    margin-left: 50px;
   }
 
   .image-bg-colour {
