@@ -47,18 +47,33 @@ const Home = () => {
         <div className="container-1-name">
           {user?.name && <h1>{user.name}</h1>}
         </div>
-        <div className="container-1-about-me">
-          <div className="container-1-about-me-header">
-            <img src={aboutImage} alt="marriage biodata" />
-            <h1>About me</h1>
+        {user?.aboutUs && (
+          <div className="container-1-about-me">
+            <div className="container-1-about-me-header">
+              <img src={aboutImage} alt="marriage biodata" />
+              <h1>About me</h1>
+            </div>
+            <p>{user?.aboutUs}</p>
           </div>
-          <p>{user?.aboutUs}</p>
-        </div>
+        )}
         <div className="container-1-details">
-          {user?.mobile && <h3>97478976922</h3>}
-          {user?.email && <h4>{user.email}</h4>}
+          <h1>Personal Details</h1>
           <hr className="hr-line" />
           <div className="full-details" style={{ marginTop: "10px" }}>
+            {user?.mobile && (
+              <>
+                <p>Mobile</p> <p>{user?.mobile}</p>
+              </>
+            )}
+          </div>
+          <div className="full-details">
+            {user?.email && (
+              <>
+                <p>Email</p> <p>{user?.email}</p>
+              </>
+            )}
+          </div>
+          <div className="full-details">
             {user?.religion && (
               <>
                 <p>Religion</p> <p>{user?.religion}</p>
