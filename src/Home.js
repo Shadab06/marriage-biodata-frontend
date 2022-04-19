@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 import "./styles.css";
-import Logo from "./images/image.jpg";
+import addressImage from "./images/address.png";
+import aboutImage from "./images/about.png";
 import image from "./images/bride-holds-beautiful-bridal-bouquet-close-up_8353-10474-16.jpg";
 import dots from "./images/dots.png";
 
@@ -43,10 +44,19 @@ const Home = () => {
         )}
       </div>
       <div className="container-1-detail">
-        <div className="container-1-details">
+        <div className="container-1-name">
           {user?.name && <h1>{user.name}</h1>}
+        </div>
+        <div className="container-1-about-me">
+          <div className="container-1-about-me-header">
+            <img src={aboutImage} alt="marriage biodata" />
+            <h1>About me</h1>
+          </div>
+          <p>{user?.aboutUs}</p>
+        </div>
+        <div className="container-1-details">
           {user?.mobile && <h3>97478976922</h3>}
-          {user?.email && <h5>{user.email}</h5>}
+          {user?.email && <h4>{user.email}</h4>}
           <hr className="hr-line" />
           <div className="full-details" style={{ marginTop: "10px" }}>
             {user?.religion && (
@@ -289,7 +299,10 @@ const Home = () => {
         </div>
       )}
       <div className="section-5-contacts">
-        <h1>Address & Location</h1>
+        <div className="section-5-contacts-heading">
+          <img src={addressImage} alt="marriage biodata" />
+          <h1>Address & Location</h1>
+        </div>
         <hr className="hr-line4" style={{ width: "250px" }} />
         <div className="user-cotact-details">
           {user?.address && (
