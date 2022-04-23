@@ -8,21 +8,29 @@ import addressImage from "./images/address.png";
 import aboutImage from "./images/about.png";
 import image from "./images/bride-holds-beautiful-bridal-bouquet-close-up_8353-10474-16.jpg";
 import dots from "./images/dots.png";
+import Dialog from "./Dialog";
 
 const Home = () => {
   const [user, setUser] = useState("");
-
+  const [dialog, setDialog] = useState(false);
   let { manual_id } = useParams();
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const { data } = await axios.get(
-          // `http://142.93.218.129:2001/api/user/get/${id}`
           `http://142.93.218.129:2001/api/user/get/${manual_id}`
+          // `http://localhost:2001/api/user/get/${manual_id}`
         );
-        console.log(data);
-        setUser(data);
+        console.log(new Date(data?.validity).getTime());
+        console.log(new Date().getTime());
+        if (new Date(data?.validity).getTime() >= new Date().getTime()) {
+          setUser(data);
+          setDialog(false);
+        } else {
+          setDialog(true);
+          setUser("");
+        }
       } catch (error) {
         console.log(error);
       }
@@ -32,6 +40,7 @@ const Home = () => {
 
   return (
     <div className="main-container">
+      {dialog && <Dialog />}
       <div className="container-1-image">
         {user?.profileImageWeb && (
           <CardMedia
