@@ -19,13 +19,22 @@ const Home = () => {
     const fetchUser = async () => {
       try {
         const { data } = await axios.get(
-          `http://142.93.218.129:2001/api/user/get/${manual_id}`
-          // `http://localhost:2001/api/user/get/${manual_id}`
+          // `http://142.93.218.129:2001/api/user/get/${manual_id}`
+          `http://192.168.0.101:2001/api/user/get/${manual_id}`
         );
-        console.log(new Date(data?.validity).getTime());
-        console.log(new Date().getTime());
-        if (new Date(data?.validity).getTime() >= new Date().getTime()) {
-          setUser(data);
+
+        let profileImageWeb, otherImagesWeb;
+
+        if (data?.profileImage) {
+          profileImageWeb = "data:image/jpeg;base64," + data.profileImage;
+        }
+
+        if (data.otherImages)
+          otherImagesWeb = "data:image/jpeg;base64," + data.otherImages;
+
+        if (new Date(data?.validity).getTime() <= new Date().getTime()) {
+          let allData = { ...data, otherImagesWeb, profileImageWeb };
+          setUser(allData);
           setDialog(false);
         } else {
           setDialog(true);
