@@ -19,8 +19,8 @@ const Home = () => {
     const fetchUser = async () => {
       try {
         const { data } = await axios.get(
-          // `http://142.93.218.129:2001/api/user/get/${manual_id}`
-          `http://192.168.0.101:2001/api/user/get/${manual_id}`
+          `http://142.93.218.129:2001/api/user/get/${manual_id}`
+          // `http://192.168.0.101:2001/api/user/get/${manual_id}`
         );
 
         let profileImageWeb, otherImagesWeb;
