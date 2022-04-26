@@ -32,7 +32,7 @@ const Home = () => {
         if (data.otherImages)
           otherImagesWeb = "data:image/jpeg;base64," + data.otherImages;
 
-        if (new Date(data?.validity).getTime() <= new Date().getTime()) {
+        if (new Date(data?.validity).getTime() >= new Date().getTime()) {
           let allData = { ...data, otherImagesWeb, profileImageWeb };
           setUser(allData);
           setDialog(false);
