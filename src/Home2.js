@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CardMedia from "@mui/material/CardMedia";
 import { useParams } from "react-router-dom";
-import moment from "moment";
 import axios from "axios";
 
 import "./styles.css";
@@ -9,20 +8,18 @@ import addressImage from "./images/address.png";
 import aboutImage from "./images/about.png";
 import image from "./images/bride-holds-beautiful-bridal-bouquet-close-up_8353-10474-16.jpg";
 import dots from "./images/dots.png";
-import Dialog from "./Dialog";
 
-const Home = () => {
+const Home2 = () => {
   const [user, setUser] = useState("");
-  const [dialog, setDialog] = useState(false);
-  let { manual_id } = useParams();
+  let { user_id } = useParams();
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const { data } = await axios.get(
-          `http://142.93.218.129:2001/api/user/get/${manual_id}`
-          // `http://192.168.0.101:2001/api/user/get/${manual_id}`
-        );
+            `http://192.168.0.101:2001/api/user/getOne/${user_id}`
+            // `http://192.168.0.101:2001/api/user/getOne/${user_id}`
+          );
 
         let profileImageWeb, otherImagesWeb;
 
@@ -33,33 +30,17 @@ const Home = () => {
         if (data.otherImages) {
           otherImagesWeb = "data:image/jpeg;base64," + data?.otherImages;
         }
-
-        const convertToDate = (d) => {
-          const [day, month, year] = d.split("/");
-          return new Date(year, month - 1, day);
-        };
-
-        if (
-          convertToDate(data?.validity) >=
-          convertToDate(moment(new Date()).format("DD/MM/YYYY"))
-        ) {
-          let allData = { ...data, otherImagesWeb, profileImageWeb };
-          setUser(allData);
-          setDialog(false);
-        } else {
-          setDialog(true);
-          setUser("");
-        }
+        let allData = { ...data, otherImagesWeb, profileImageWeb };
+        setUser(allData);
       } catch (error) {
         console.log(error);
       }
     };
     fetchUser();
-  }, []);
+  }, [user_id]);
 
   return (
     <div className="main-container">
-      {dialog && <Dialog />}
       <div className="container-1-image">
         {user?.profileImageWeb && (
           <CardMedia
@@ -374,4 +355,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home2;
