@@ -37,7 +37,7 @@ const Home2 = () => {
       }
     };
     fetchUser();
-  }, [user_id]);
+  }, []);
 
   return (
     <div className="main-container">
