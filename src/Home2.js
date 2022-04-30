@@ -17,7 +17,7 @@ const Home2 = () => {
     const fetchUser = async () => {
       try {
         const { data } = await axios.get(
-            `http://192.168.0.101:2001/api/user/getOne/${user_id}`
+            `http://142.93.218.129:2001/api/user/getOne/${user_id}`
             // `http://192.168.0.101:2001/api/user/getOne/${user_id}`
           );
 
