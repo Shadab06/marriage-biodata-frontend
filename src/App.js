@@ -22,6 +22,6 @@ export default App;
 
 const Main = () => {
   return (
-    <h1 style={{ textAlign: "center", marginTop: "100px" }}>Welcome to Marriage Biodata</h1>
+    <h1 style={{ textAlign: "center", marginTop: "100px" }}>Welcome to TwoRingz</h1>
   )
 }
