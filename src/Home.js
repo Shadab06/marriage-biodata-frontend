@@ -23,7 +23,7 @@ const Home = () => {
         }
 
         const convertToDate = (d) => {
-          const [day, month, year] = d.split("/");
+          const [day, month, year] = d?.split("/");
           return new Date(year, month - 1, day);
         };
 
