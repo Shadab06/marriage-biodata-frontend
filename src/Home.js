@@ -83,8 +83,21 @@ const Home = () => {
         <hr />
       </div>
       <div className="section-3">
+        {user?.hobbies && (
+          <div className="common-detail-header">
+            <h4>Hobbies</h4>
+            <hr
+              style={{
+                width: "50px",
+                height: "1px",
+                backgroundColor: "green",
+                marginBottom: "10px",
+              }}
+            />
+          </div>
+        )}
         <div className="about-me">
-          <p>{user?.hobbies}</p>
+          <p>{user.hobbies}</p>
         </div>
         <div className="common-detail-header">
           <h1>Personal Details</h1>
@@ -95,37 +108,37 @@ const Home = () => {
         <div className="basic-details-2 basic-details-common">
           {user?.email && (
             <>
-              <p>email</p> <p>{user.email}</p>
+              <p>Email:</p> <p>{user.email}</p>
             </>
           )}
           {user?.mobile && (
             <>
-              <p>mobile</p> <p>{user.mobile}</p>
+              <p>Mobile:</p> <p>{user.mobile}</p>
             </>
           )}
           {user?.dob && (
             <>
-              <p>Birth date</p> <p>{user.dob}</p>
+              <p>Birth Date:</p> <p>{user.dob}</p>
             </>
           )}
           {user?.age && (
             <>
-              <p>Age</p> <p>{user.age}</p>
+              <p>Age:</p> <p>{user.age}</p>
             </>
           )}
           {user?.religion && (
             <>
-              <p>Religion</p> <p>{user.religion}</p>
+              <p>Religion:</p> <p>{user.religion}</p>
             </>
           )}
           {user?.caste && (
             <>
-              <p>Caste</p> <p>{user.caste}</p>
+              <p>Caste:</p> <p>{user.caste}</p>
             </>
           )}
           {user?.bloodGroup && (
             <>
-              <p>BloodGroup</p> <p>{user.bloodGroup}</p>
+              <p>Blood Group:</p> <p>{user.bloodGroup}</p>
             </>
           )}
         </div>
@@ -145,22 +158,22 @@ const Home = () => {
         <div className="basic-details-common horoscope-details">
           {user?.timeOfBirth && (
             <>
-              <p>Birth Time</p> <p>{user.timeOfBirth}</p>
+              <p>Birth Time:</p> <p>{user.timeOfBirth}</p>
             </>
           )}
           {user?.placeOfBirth && (
             <>
-              <p>Birth Place</p> <p>{user.placeOfBirth}</p>
+              <p>Birth Place:</p> <p>{user.placeOfBirth}</p>
             </>
           )}
           {user?.mangal && (
             <>
-              <p>Mangal</p> <p>{user.mangal}</p>
+              <p>Mangal:</p> <p>{user.mangal}</p>
             </>
           )}
           {user?.kuldevak && (
             <>
-              <p>Kuldevak/Gotra</p> <p>{user.kuldevak}</p>
+              <p>Kuldevak/Gotra:</p> <p>{user.kuldevak}</p>
             </>
           )}
         </div>
@@ -178,17 +191,17 @@ const Home = () => {
         <div className="basic-details-common horoscope-details">
           {user?.education && (
             <>
-              <p>Education</p> <p>{user.education}</p>
+              <p>Education:</p> <p>{user.education}</p>
             </>
           )}
           {user?.occupation && (
             <>
-              <p>Occupation</p> <p>{user.occupation}</p>
+              <p>Occupation:</p> <p>{user.occupation}</p>
             </>
           )}
           {user?.income && (
             <>
-              <p>Income</p> <p>{user.income}</p>
+              <p>Income:</p> <p>{user.income}</p>
             </>
           )}
         </div>
@@ -234,43 +247,43 @@ const Home = () => {
         <div className="basic-details-common family-details">
           {user?.fatherName && (
             <>
-              <p>Father Name</p> <p>{user.fatherName}</p>
+              <p>Father Name:</p> <p>{user.fatherName}</p>
             </>
           )}
           {user?.fatherOccupation && (
             <>
-              <p>Father Occupation</p> <p>{user.fatherOccupation}</p>
+              <p>Father Occupation:</p> <p>{user.fatherOccupation}</p>
             </>
           )}
           {user?.motherName && (
             <>
-              <p>Mother Name</p> <p>{user.motherName}</p>
+              <p>Mother Name:</p> <p>{user.motherName}</p>
             </>
           )}
           {user?.motherOccupation && (
             <>
-              <p>Mother Occupation</p> <p>{user.motherOccupation}</p>
+              <p>Mother Occupation:</p> <p>{user.motherOccupation}</p>
             </>
           )}
           {user?.siblings && (
             <>
-              <p>Siblings</p> <p>{user.siblings}</p>
+              <p>Siblings:</p> <p>{user.siblings}</p>
             </>
           )}
           {user?.brother && (
             <>
-              <p>Brother(s)</p> <p>{user.brother}</p>
+              <p>Brother(s):</p> <p>{user.brother}</p>
             </>
           )}
           {user?.sister && (
             <>
-              <p>Sister(s)</p> <p>{user.sister}</p>
+              <p>Sister(s):</p> <p>{user.sister}</p>
             </>
           )}
         </div>
       </div>
       {user?.address && (
-        <div className="section-8">
+        <>
           <div className="common-detail-header">
             <div className="section-8">
               <h1>Location</h1>
@@ -285,12 +298,12 @@ const Home = () => {
             </div>
           </div>
           <div className="basic-details-common location-details">
-            <p>Address</p>{" "}
+            <p>Address:</p>{" "}
             <p>
               {user.address} {user?.pincode}
             </p>
           </div>
-        </div>
+        </>
       )}
     </div>
   );
