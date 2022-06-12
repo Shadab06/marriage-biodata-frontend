@@ -14,6 +14,9 @@ const Home2 = () => {
         const { data } = await axios.get(
           `http://142.93.218.129:2001/api/user/getOne/${user_id}`
         );
+        
+        document.title = data?.name;
+        ducument.description = data?.age;
 
         if (!data?.profileImage) {
           document.getElementById("name-section").style.marginTop = "10px";
