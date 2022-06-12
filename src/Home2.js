@@ -16,7 +16,7 @@ const Home2 = () => {
         );
         
         document.title = data?.name;
-        ducument.description = data?.age;
+        document.description = data?.age;
 
         if (!data?.profileImage) {
           document.getElementById("name-section").style.marginTop = "10px";
