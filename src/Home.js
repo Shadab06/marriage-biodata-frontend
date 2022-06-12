@@ -4,7 +4,7 @@ import moment from "moment";
 import axios from "axios";
 
 import "./style.css";
-import Dialog from "./Dialog.js"
+import Dialog from "./Dialog.js";
 
 const Home = () => {
   const [user, setUser] = useState("");
@@ -17,9 +17,28 @@ const Home = () => {
         const { data } = await axios.get(
           `http://142.93.218.129:2001/api/user/get/${manual_id}`
         );
-        
-        document.title = data?.name;
-        document.description = data?.age;
+
+        var myDynamicManifest = {
+          name: data?.name,
+          short_name: "Site",
+          description: data?.age,
+          start_url: "",
+          background_color: "#000000",
+          theme_color: "#0f4a73",
+          icons: [
+            {
+              src: `http://142.93.218.129:2001/files/${user.profileImage}`,
+              sizes: "256x256",
+              type: "image/jpg",
+            },
+          ],
+        };
+        const stringManifest = JSON.stringify(myDynamicManifest);
+        const blob = new Blob([stringManifest], { type: "application/json" });
+        const manifestURL = URL.createObjectURL(blob);
+        document
+          .querySelector("#my-manifest-placeholder")
+          .setAttribute("href", manifestURL);
 
         if (!data?.profileImage) {
           document.getElementById("name-section").style.marginTop = "10px";
@@ -40,7 +59,7 @@ const Home = () => {
         }
         setUser(data);
       } catch (error) {
-        console.log(error); 
+        console.log(error);
       }
     };
     fetchUser();
