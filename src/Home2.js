@@ -15,23 +15,34 @@ const Home2 = () => {
           `http://142.93.218.129:2001/api/user/getOne/${user_id}`
         );
 
-        var myDynamicManifest = {
-          "name": data?.name,
-          "short_name": "Site",
-          "description": data?.age,
-          "start_url": "",
-          "background_color": "#000000",
-          "theme_color": "#0f4a73",
-          "icons": [{
-            "src": `http://142.93.218.129:2001/files/${user.profileImage}`,
-            "sizes": "256x256",
-            "type": "image/jpg"
-          }]
+        document.description = `Age: ${data?.age} \n Living in: ${data?.address}`;
+        if (data.profileImage) {
+          document.getElementById(
+            "favicon"
+          ).href = `http://142.93.218.129:2001/files/${data?.profileImage}`;
         }
+
+        var myDynamicManifest = {
+          name: data?.name,
+          short_name: "Site",
+          description: data?.age,
+          start_url: "",
+          background_color: "#000000",
+          theme_color: "#0f4a73",
+          icons: [
+            {
+              src: `http://142.93.218.129:2001/files/${data?.profileImage}`,
+              sizes: "256x256",
+              type: "image/jpg",
+            },
+          ],
+        };
         const stringManifest = JSON.stringify(myDynamicManifest);
-        const blob = new Blob([stringManifest], {type: 'application/json'});
+        const blob = new Blob([stringManifest], { type: "application/json" });
         const manifestURL = URL.createObjectURL(blob);
-        document.querySelector('#my-manifest-placeholder').setAttribute('href', manifestURL);
+        document
+          .querySelector("#my-manifest-placeholder")
+          .setAttribute("href", manifestURL);
 
         if (!data?.profileImage) {
           document.getElementById("name-section").style.marginTop = "10px";

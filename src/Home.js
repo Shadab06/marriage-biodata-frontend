@@ -18,6 +18,13 @@ const Home = () => {
           `http://142.93.218.129:2001/api/user/get/${manual_id}`
         );
 
+        document.description = `Age: ${data?.age} \n Living in: ${data?.address}`;
+        if (data.profileImage) {
+          document.getElementById(
+            "favicon"
+          ).href = `http://142.93.218.129:2001/files/${data?.profileImage}`;
+        }
+
         var myDynamicManifest = {
           name: data?.name,
           short_name: "Site",
@@ -27,7 +34,7 @@ const Home = () => {
           theme_color: "#0f4a73",
           icons: [
             {
-              src: `http://142.93.218.129:2001/files/${user.profileImage}`,
+              src: `http://142.93.218.129:2001/files/${data?.profileImage}`,
               sizes: "256x256",
               type: "image/jpg",
             },
