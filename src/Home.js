@@ -35,7 +35,7 @@ const Home = () => {
           icons: [
             {
               src: `http://142.93.218.129:2001/files/${data?.profileImage}`,
-              sizes: "256x256",
+              sizes: "512x512 256x256 192x192 64x64 32x32 24x24 16x16",
               type: "image/jpg",
             },
           ],
