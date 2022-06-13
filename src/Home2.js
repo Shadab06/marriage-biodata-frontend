@@ -12,7 +12,7 @@ const Home2 = () => {
     const fetchUser = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:2001/api/user/getOne/${user_id}`
+          `http://142.93.218.129:2001/api/user/getOne/${user_id}`
         );
 
         document.description = `Age: ${data?.age} \n Living in: ${data?.address}`;
@@ -60,7 +60,7 @@ const Home2 = () => {
       <div className="section-1 profile-image">
         {user?.profileImage && (
           <img
-            src={`http://localhost:2001/files/${user.profileImage}`}
+            src={`http://142.93.218.129:2001/files/${user.profileImage}`}
             alt="pofile image"
           />
         )}
@@ -225,7 +225,7 @@ const Home2 = () => {
       <div className="section-5 other-image">
         {user?.otherImages && (
           <img
-            src={`http://localhost:2001/files/${user.otherImages}`}
+            src={`http://142.93.218.129:2001/files/${user.otherImages}`}
             alt="other image"
           />
         )}
