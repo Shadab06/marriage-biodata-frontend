@@ -173,17 +173,22 @@ const Home = () => {
         </div>
       </div>
       <div className="section-4">
-        <div className="common-detail-header">
-          <h1>Horoscope Details</h1>
-          <hr
-            style={{
-              width: "100px",
-              height: "1px",
-              backgroundColor: "white",
-              marginBottom: "10px",
-            }}
-          />
-        </div>
+        {(user?.timeOfBirth ||
+          user?.placeOfBirth ||
+          user?.mangal ||
+          user?.kuldevak) && (
+          <div className="common-detail-header">
+            <h1>Horoscope Details</h1>
+            <hr
+              style={{
+                width: "100px",
+                height: "1px",
+                backgroundColor: "white",
+                marginBottom: "10px",
+              }}
+            />
+          </div>
+        )}
         <div className="basic-details-common horoscope-details">
           {user?.timeOfBirth && (
             <>
