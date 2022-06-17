@@ -279,9 +279,29 @@ const Home = () => {
           />
         </div>
         <div className="basic-details-common family-details">
+          {user?.grandFather && (
+            <>
+              <p>Grand Father:</p> <p>{user.grandFather}</p>
+            </>
+          )}
+          {user?.grandMother && (
+            <>
+              <p>Grand Mother:</p> <p>{user.grandMother}</p>
+            </>
+          )}
           {user?.fatherName && (
             <>
               <p>Father Name:</p> <p>{user.fatherName}</p>
+            </>
+          )}
+          {user?.paternalua && (
+            <>
+              <p>Paternal Uncle/Aunt:</p> <p>{user.paternalua}</p>
+            </>
+          )}
+          {user?.maternalua && (
+            <>
+              <p>Maternal Uncle/Aunt:</p> <p>{user.maternalua}</p>
             </>
           )}
           {user?.fatherOccupation && (

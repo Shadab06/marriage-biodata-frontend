@@ -15,6 +15,8 @@ const Home2 = () => {
           `http://142.93.218.129:2001/api/user/getOne/${user_id}`
         );
 
+        console.log(data);
+
         document.description = `Age: ${data?.age} \n Living in: ${data?.address}`;
         if (data.profileImage) {
           document.getElementById(
@@ -261,9 +263,29 @@ const Home2 = () => {
           />
         </div>
         <div className="basic-details-common family-details">
+          {user?.grandFather && (
+            <>
+              <p>Grand Father:</p> <p>{user.grandFather}</p>
+            </>
+          )}
+          {user?.grandMother && (
+            <>
+              <p>Grand Mother:</p> <p>{user.grandMother}</p>
+            </>
+          )}
           {user?.fatherName && (
             <>
               <p>Father Name:</p> <p>{user.fatherName}</p>
+            </>
+          )}
+          {user?.paternalua && (
+            <>
+              <p>Paternal Uncle/Aunt:</p> <p>{user.paternalua}</p>
+            </>
+          )}
+          {user?.maternalua && (
+            <>
+              <p>Maternal Uncle/Aunt:</p> <p>{user.maternalua}</p>
             </>
           )}
           {user?.fatherOccupation && (
