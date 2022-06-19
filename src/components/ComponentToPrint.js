@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 
-import "./style.css";
+import "../style.css";
 
-const Home2 = () => {
+export const ComponentToPrint = React.forwardRef((props, ref) => {
   const [user, setUser] = useState("");
-  let { user_id } = useParams();
-
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const { data } = await axios.get(
-          `http://142.93.218.129:2001/api/user/getOne/${user_id}`
+          `http://142.93.218.129:2001/api/user/get/${props.manual_id}`
         );
+        setUser(data);
 
         document.description = `Age: ${data?.age} \n Living in: ${data?.address}`;
         if (data.profileImage) {
@@ -47,7 +45,6 @@ const Home2 = () => {
         if (!data?.profileImage) {
           document.getElementById("name-section").style.marginTop = "10px";
         }
-        setUser(data);
       } catch (error) {
         console.log(error);
       }
@@ -56,7 +53,7 @@ const Home2 = () => {
   }, []);
 
   return (
-    <div className="main-container">
+    <div ref={ref} className="main-container">
       <div className="section-1 profile-image">
         {user?.profileImage && (
           <img
@@ -343,6 +340,4 @@ const Home2 = () => {
       )}
     </div>
   );
-};
-
-export default Home2;
+});

@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-        <Route path="/" exact component={Main} />
+          <Route path="/" exact component={Main} />
           <Route path="/:manual_id" exact component={Home} />
           <Route path="/user/:user_id" exact component={Home2} />
         </Switch>
@@ -22,6 +22,8 @@ export default App;
 
 const Main = () => {
   return (
-    <h1 style={{ textAlign: "center", marginTop: "100px" }}>Welcome to TwoRingz</h1>
-  )
-}
+    <h1 style={{ textAlign: "center", marginTop: "100px" }}>
+      Welcome to TwoRingz
+    </h1>
+  );
+};

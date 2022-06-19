@@ -5,6 +5,19 @@
   margin: auto;
 }
 
+.print-button {
+  background: transparent;
+  font-size: 1.3vw;
+  border: none;
+}
+
+.container-dropdown {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 2;
+}
+
 .section-1,
 .section-5 {
   max-width: 500px;
