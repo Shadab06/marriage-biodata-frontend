@@ -49,6 +49,7 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
         console.log(error);
       }
     };
+    
     fetchUser();
   }, []);
 
