@@ -23,7 +23,7 @@ export default App;
 const Main = () => {
   return (
     <h1 style={{ textAlign: "center", marginTop: "100px" }}>
-      Welcome to TwoRingz
+      Welcome to TwoRingz text app
     </h1>
   );
 };
